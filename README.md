@@ -64,6 +64,7 @@
 6. [ ] On Close the popup should play Close Animation with trigger "Close"
 7. [ ] Bonus use shaders to create a nice effect on the popup
 8. [ ] Try to use Text Mesh Pro for most of the text as you can
+9. [ ] Feel free to use Tweens or Code for anything needed
 
 ### LiveOpes Replace Popup Art Tool
 ● Art replacement tool, we need to be able to switch art and create new popups rapidly
