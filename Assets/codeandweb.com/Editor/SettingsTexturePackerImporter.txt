@@ -1,14 +1,11 @@
 version: 2
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
-- Assets/popupspritesheet.tpsheet
-- Assets/ui/popupspritesheet.tpsheet
+- Assets/ui/popupspritesheet3.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
-- Assets/popupspritesheet.png
-- Assets/ui/popupspritesheet.png
+- Assets/ui/popupspritesheet3.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
-- 
 - 
 enableDebugOutput: 0
