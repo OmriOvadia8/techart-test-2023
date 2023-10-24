@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3ecce89d3d96d1d4f8acea78b673bc50
+guid: ebf15aebc42c92b47a327461807360c6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,32 +136,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: beam
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 579
-        width: 527
-        height: 528
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a39d285560208214780f68f5ec3752b1
-      internalID: 920767945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: bear
       rect:
         serializedVersion: 2
-        x: 617
-        y: 1341
+        x: 403
+        y: 178
         width: 202
         height: 213
       alignment: 0
@@ -171,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7812a6f62df88bb4b9d92aa9373a9fa8
-      internalID: 1719676517
+      spriteID: 694d3a432618b0d468dc44848d2d4e36
+      internalID: -1172251110
       vertices: []
       indices: 
       edges: []
@@ -181,8 +160,8 @@ TextureImporter:
       name: bet
       rect:
         serializedVersion: 2
-        x: 872
-        y: 1439
+        x: 977
+        y: 990
         width: 33
         height: 33
       alignment: 0
@@ -192,29 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a09ba545ccb5f0148b2ca84a24473fed
-      internalID: -1363392076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: black background
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1109
-        width: 614
-        height: 938
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2082dca8ed8b4c24380186fc2e0b7d66
-      internalID: -1133894039
+      spriteID: da325bf63e949e04d8ef5bcf6f76a181
+      internalID: 162538517
       vertices: []
       indices: 
       edges: []
@@ -224,7 +182,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 530
-        y: 589
+        y: 505
         width: 445
         height: 518
       alignment: 0
@@ -234,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66c6126d698d6c248b27944886012f98
-      internalID: -2069197816
+      spriteID: eecbc289b3725ea46a7ca86a0d72c543
+      internalID: 133749747
       vertices: []
       indices: 
       edges: []
@@ -244,8 +202,8 @@ TextureImporter:
       name: bragbutton
       rect:
         serializedVersion: 2
-        x: 821
-        y: 1474
+        x: 1
+        y: 417
         width: 169
         height: 76
       alignment: 0
@@ -255,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 617a7d889eac5a746a69d7c8797506c0
-      internalID: -1967058978
+      spriteID: f2c5d3731ed21be4591b75b76effbb2c
+      internalID: -1350189787
       vertices: []
       indices: 
       edges: []
@@ -265,8 +223,8 @@ TextureImporter:
       name: coin
       rect:
         serializedVersion: 2
-        x: 821
-        y: 1421
+        x: 973
+        y: 452
         width: 49
         height: 51
       alignment: 0
@@ -276,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 463409036a58e2e48ae6c3b70eff4384
-      internalID: -705759270
+      spriteID: 075169341cd504249b3e4bb6db561e03
+      internalID: -690915319
       vertices: []
       indices: 
       edges: []
@@ -286,8 +244,8 @@ TextureImporter:
       name: collectbutton
       rect:
         serializedVersion: 2
-        x: 845
-        y: 1552
+        x: 172
+        y: 418
         width: 174
         height: 75
       alignment: 0
@@ -297,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4833e67cd334857468150bb8b3972f30
-      internalID: -899931924
+      spriteID: 9217188ff88b89d48b11a89248202d33
+      internalID: -1197895322
       vertices: []
       indices: 
       edges: []
@@ -307,8 +265,8 @@ TextureImporter:
       name: moneyheadline
       rect:
         serializedVersion: 2
-        x: 617
-        y: 1629
+        x: 607
+        y: 317
         width: 396
         height: 74
       alignment: 0
@@ -318,8 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a3b5b61905dc9146ac43e394a36b35f
-      internalID: 299314228
+      spriteID: 6ab46c95d2046af48b50fb39f2ebdeed
+      internalID: -1037917316
       vertices: []
       indices: 
       edges: []
@@ -328,8 +286,8 @@ TextureImporter:
       name: super
       rect:
         serializedVersion: 2
-        x: 907
-        y: 1439
+        x: 977
+        y: 955
         width: 33
         height: 33
       alignment: 0
@@ -339,8 +297,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15d9ebfb34dc4b541b3f8cf9750fa3f5
-      internalID: 586720092
+      spriteID: 8f3a72607c0055142a5d05c586b77b6c
+      internalID: 1355108309
       vertices: []
       indices: 
       edges: []
@@ -350,7 +308,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 530
-        y: 477
+        y: 393
         width: 441
         height: 110
       alignment: 0
@@ -360,8 +318,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ce7781952ec5604db905f39e5a81139
-      internalID: -1161310082
+      spriteID: 5c0e98859d04b834d9dc8490567b54f7
+      internalID: 1005395012
       vertices: []
       indices: 
       edges: []
@@ -370,8 +328,8 @@ TextureImporter:
       name: VictoryText
       rect:
         serializedVersion: 2
-        x: 617
-        y: 1556
+        x: 403
+        y: 105
         width: 226
         height: 71
       alignment: 0
@@ -381,8 +339,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e32ef9076f812604d92a0588bd705b34
-      internalID: 2099428850
+      spriteID: 07ba7fddcf9a69f45a2fa63a4c9f3c49
+      internalID: -1136441759
       vertices: []
       indices: 
       edges: []
@@ -391,8 +349,8 @@ TextureImporter:
       name: war
       rect:
         serializedVersion: 2
-        x: 942
-        y: 1439
+        x: 977
+        y: 920
         width: 32
         height: 33
       alignment: 0
@@ -402,8 +360,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c2023d9033d200428c90b94ac11ace7
-      internalID: 1870812703
+      spriteID: bd639765bdac6f240bab74b0aaf53ace
+      internalID: 1833133662
       vertices: []
       indices: 
       edges: []
@@ -412,8 +370,8 @@ TextureImporter:
       name: yellowcontentBG
       rect:
         serializedVersion: 2
-        x: 617
-        y: 1705
+        x: 1
+        y: 49
         width: 400
         height: 342
       alignment: 0
@@ -423,8 +381,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbe835ea5b1ff644fad7adfb48a51bcc
-      internalID: -1925364759
+      spriteID: 67afeae787f79d8459e8e42e6e9f66a4
+      internalID: -1654847239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 495
+        width: 527
+        height: 528
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6aed15baf3ce3540a4c38c64c8670e0
+      internalID: 1414861650
       vertices: []
       indices: 
       edges: []
@@ -432,7 +411,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5a9151b26df353a49987c038c6724e0c
+    spriteID: 688524d2d06b82b4990a7e49db54f1a7
     internalID: 0
     vertices: []
     indices: 
@@ -440,20 +419,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      VictoryText: 2099428850
-      beam: 920767945
-      bear: 1719676517
-      bet: -1363392076
-      black background: -1133894039
-      bluecontentBG: -2069197816
-      bragbutton: -1967058978
-      coin: -705759270
-      collectbutton: -899931924
-      moneyheadline: 299314228
-      super: 586720092
-      victoryheader: -1161310082
-      war: 1870812703
-      yellowcontentBG: -1925364759
+      VictoryText: -1136441759
+      beam: 1414861650
+      bear: -1172251110
+      bet: 162538517
+      bluecontentBG: 133749747
+      bragbutton: -1350189787
+      coin: -690915319
+      collectbutton: -1197895322
+      moneyheadline: -1037917316
+      super: 1355108309
+      victoryheader: 1005395012
+      war: 1833133662
+      yellowcontentBG: -1654847239
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

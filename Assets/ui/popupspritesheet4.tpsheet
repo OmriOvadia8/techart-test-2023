@@ -1,0 +1,28 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:352364928215d8a16920f2ec2a9f5a87:aed176638aef53d4c759596fbc777a56:3f8de6254be20ad2a1a0678a11c8e6e8$
+#
+:format=40300
+:texture=popupspritesheet4.png
+:size=1024x1024
+:pivotpoints=enabled
+:borders=disabled
+:alphahandling=ClearTransparentPixels
+
+beam;1;495;527;528; 0.5;0.5; 0;0;0;0
+bear;403;178;202;213; 0.5;0.5; 0;0;0;0
+bet;977;990;33;33; 0.5;0.5; 0;0;0;0
+bluecontentBG;530;505;445;518; 0.5;0.5; 0;0;0;0
+bragbutton;1;417;169;76; 0.5;0.5; 0;0;0;0
+coin;973;452;49;51; 0.5;0.5; 0;0;0;0
+collectbutton;172;418;174;75; 0.5;0.5; 0;0;0;0
+moneyheadline;607;317;396;74; 0.5;0.5; 0;0;0;0
+super;977;955;33;33; 0.5;0.5; 0;0;0;0
+victoryheader;530;393;441;110; 0.5;0.5; 0;0;0;0
+VictoryText;403;105;226;71; 0.5;0.5; 0;0;0;0
+war;977;920;32;33; 0.5;0.5; 0;0;0;0
+yellowcontentBG;1;49;400;342; 0.5;0.5; 0;0;0;0
