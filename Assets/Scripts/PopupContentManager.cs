@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PopupContentManager : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class PopupContentManager : MonoBehaviour
 
     private void Start()
     {
-        rewardAmountText.text = rewardAmount.ToString("N0");
+        DOVirtual.Float(0, rewardAmount, 3f, value =>
+        {
+            rewardAmountText.text = value.ToString("N0");
+        });
         string hexColor = ColorUtility.ToHtmlStringRGB(nameColor);
         crushText.text = $"YOU CRUSHED <color=#{hexColor}>{playerName}</color>";
     }
