@@ -8,11 +8,11 @@ public class PopupContentManager : MonoBehaviour
     [SerializeField] int rewardAmount; // retrieve actual reward amount;
     [SerializeField] TMP_Text rewardAmountText;
     [SerializeField] TMP_Text crushText;
-    [SerializeField] Image coinIcon;
     [SerializeField] Color nameColor;
 
     private void Start()
     {
+        rewardAmountText.text = rewardAmount.ToString("N0");
         string hexColor = ColorUtility.ToHtmlStringRGB(nameColor);
         crushText.text = $"YOU CRUSHED <color=#{hexColor}>{playerName}</color>";
     }
