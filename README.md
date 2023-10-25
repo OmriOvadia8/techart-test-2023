@@ -26,3 +26,5 @@ I ensured the Score Info lines' positions (Super, Bet, War) are being adjusted v
 
 ## Challenges
 While I didn't have extensive experience in crafting window editor tools, with online resources and dedicated learning, I successfully created the Art Replacer Tool.
+
+![GIF](Assets/GIF/ezgif-5-2b292d0f47.gif)
