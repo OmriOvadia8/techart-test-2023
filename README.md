@@ -1,83 +1,28 @@
-﻿![CommunixLogo.png](CommunixLogo.png)
+#Technical Artist Home Assignment by Omri Ovadia
 
-# Technical Artist Home Assignment
+##Brief
+For this task, I remade the popup prefab, incorporating effects and animations to enhance its visual appeal.
+Working on this project was a delightful experience. I learned new concepts and techniques, and it was enriching.
+I placed emphasis on ensuring elements were both adjustable and scalable directly from the Unity Inspector, allowing users to easily customize features while ensuring the popup updates accordingly.
 
-## Set Up Project
+##Decision Making Process
+###Dynamic Elements
+To offer flexibility, I designed most elements to be adjustable and scalable.
+The main example is tweaking settings via the Unity Inspector like changing the Score Multipliers' values will affect the popup content accordingly (Changing positions, texts, alpha, calculations, etc..).
+I replaced all the text from the PSD with TextMeshPro, except for the "Victory" text, allowing greater flexibility with the popup's text content.
+Given that the "Victory" text has limited variations and its style in the PSD is intricate to replicate in TMP, I used the image directly from the PSD.
+This ensures both quality and easy updates through the ArtReplacerTool.
 
-● Download unity 2022.3.x lts
+###Animations
+I employed DOTween to script all animations, except for the Open/Close ones.
+Users can adjust animation parameters (like speed and scale) through the Unity Inspector.
+Although I contemplated adding animations like spinning Sun Beam and additional particles, I decided against overloading the design and aimed for subtlety.
+The initiation of DOTween animations is triggered by Unity Animation Events after the popup's opening animation completes.
+I referred to the "Resort Kings" game to draw inspiration from the original popup.
 
-● Fork this repository to your own github account
+###Elements Positions
+I've anchored all elements to ensure consistent positioning across a range of portrait screen resolutions, spanning from large screens of flip phones to screens as small as the Redmi4.
+I ensured the Score Info lines' positions (Super, Bet, War) are being adjusted via Grid Layout in case some of them aren't activated.
 
-● Open the project in Unity 2022.3
-
-● You Can use any resources, scripts, plugins, assets you want
-
-● You can learn and use any tools available to you such as
-
-    ○ Google
-    ○ Forums
-    ○ Facebook
-    ○ ChatGPT
-    ○ And more
-
-> Questions to: shahar.bar@communix.com
-
-## What & how we test?
-
-● We are checking your Unity General Knowledge
-
-● We evaluate overall organization of your project
-
-● It is very important to us to see good hierarchy arrangement
-
-● Understanding of UI and how it works in Unity is important
-
-● We want to see artistic and stylistic approach to the task
-
-● We would like to see Dynamic elements, animation, scalability and effects
-
-● Texture optimization is very important to us
-
-● Good and clean tool creation and usage is a big bonus
-
-
-## Tasks - Victory Popup
-### Importing from PSD
-
-● In the following [PSD File](OriginalPSD.psd) you will find all materials needed for the task
-1. [ ] Slice the different elements (the way you think it should be)
-2. [ ] Import the sliced elements to the project using TexturePacker by CodeAndWeb https://www.codeandweb.com/texturepacker
-
-### Building the prefab
-● In unity create a prefab for the victory popup
-1. [ ] Make sure the prefab will look good on different mobile resolutions (portrait)
-2. [ ] Make sure the prefab will look as much as possible like the Mockup
-![Mockup.png](Mockup.png)
-
-### Adding Popup Behaviour
-● Add the following Script to the prefab [PopupBehaviour.cs](Assets/Scripts/PopupBehaviour.cs) 
-1. [ ] Add Animator to the prefab - The script will play all of them
-2. [ ] On Play the popup should play Open Animation with trigger "Play"
-3. [ ] When the popup is opened all elements are revealed
-4. [ ] Pop up stays idle for a couple of seconds - feel free to add idle animations/FX
-5. [ ] When Press any of the buttons it will call a Method in the Script called "OnClosePressed()"
-6. [ ] On Close the popup should play Close Animation with trigger "Close"
-7. [ ] Bonus use shaders to create a nice effect on the popup
-8. [ ] Try to use Text Mesh Pro for most of the text as you can
-9. [ ] Feel free to use Tweens or Code for anything needed
-
-### LiveOpes Replace Popup Art Tool
-● Art replacement tool, we need to be able to switch art and create new popups rapidly
-1. [ ] Use the popup that you just built as template
-2. [ ] Write Editor Window tool that will get a new SpriteSheet as Input
-3. [ ] Will Create new prefab and save it in the project with the new art replaced
-4. [ ] You can implement it how every you want, it is ok if you put in place some rules such same names in the PSD ect.
-
-**● Commit all changes to your fork and send us the link**
-
-## Useful Links and Resources
-1. [ ] [UI Video](https://www.youtube.com/watch?v=HwdweCX5aMI/)
-2. [ ] [Shaders 101](https://www.youtube.com/watch?v=T-HXmQAMhG0/)
-2. [ ] [Texture Packer](https://www.youtube.com/watch?v=4WcoSMFSYiY)
-
-> Questions to: shahar.bar@communix.com
+##Challenges
+While I didn't have extensive experience in crafting window editor tools, with online resources and dedicated learning, I successfully created the Art Replacer Tool.
