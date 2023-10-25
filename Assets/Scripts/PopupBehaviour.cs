@@ -25,7 +25,7 @@ namespace Communix.Techart.Test
 
         public void OnClose()
         {
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }
