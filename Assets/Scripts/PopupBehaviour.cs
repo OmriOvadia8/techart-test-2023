@@ -22,5 +22,10 @@ namespace Communix.Techart.Test
         {
             animator.SetTrigger("Close");
         }
+
+        public void OnClose()
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 }
