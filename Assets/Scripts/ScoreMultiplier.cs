@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -13,32 +12,51 @@ public class ScoreMultiplier : MonoBehaviour
         public CanvasGroup canvasGroupAlpha;
     }
 
-    public List<MultiplierItem> multiplierItems = new();
-    [SerializeField] private int noneValue, normalAlphaValue;
-    [SerializeField] float noneAlphaValue = 0.5f;
+    [SerializeField] private List<MultiplierItem> multiplierItems = new();
+    [SerializeField] private int noneValue;
+    [SerializeField] private float noneAlphaValue, noneTextSize, normalTextSize, normalAlphaValue;
 
-    private void Start() => UpdateMultipliersDisplay();
+    private void Start()
+    {
+        RefreshMultiplierDisplays();
+    }
 
-    private void UpdateMultipliersDisplay()
+    private void RefreshMultiplierDisplays()
     {
         foreach (MultiplierItem item in multiplierItems)
         {
-            if (item.multiplierValue == noneValue)
+            if (IsMultiplierNone(item))
             {
-                item.multiplierText.text = "NONE";
-                item.canvasGroupAlpha.alpha = noneAlphaValue;
+                SetMultiplierAsNone(item);
             }
             else
             {
-                item.multiplierText.text = "X" + item.multiplierValue.ToString();
-                item.canvasGroupAlpha.alpha = normalAlphaValue;
+                SetMultiplierDisplay(item);
             }
         }
+    }
+
+    private bool IsMultiplierNone(MultiplierItem item)
+    {
+        return item.multiplierValue == noneValue;
+    }
+
+    private void SetMultiplierAsNone(MultiplierItem item)
+    {
+        item.multiplierText.text = "NONE";
+        item.multiplierText.fontSize = noneTextSize;
+        item.canvasGroupAlpha.alpha = noneAlphaValue;
+    }
+
+    private void SetMultiplierDisplay(MultiplierItem item)
+    {
+        item.multiplierText.text = "X" + item.multiplierValue.ToString();
+        item.multiplierText.fontSize = normalTextSize;
+        item.canvasGroupAlpha.alpha = normalAlphaValue;
     }
 
     public List<MultiplierItem> GetMultiplierItems()
     {
         return multiplierItems;
     }
-
 }

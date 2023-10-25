@@ -12,16 +12,25 @@ public class ArtReplacerTool : EditorWindow
     [MenuItem("Tools/Art Replacer")]
     static void Init()
     {
-        ArtReplacerTool window = (ArtReplacerTool)EditorWindow.GetWindow(typeof(ArtReplacerTool));
+        ArtReplacerTool window = GetWindow<ArtReplacerTool>();
         window.Show();
     }
 
     void OnGUI()
     {
+        DisplayFields();
+        DisplayReplaceButton();
+    }
+
+    private void DisplayFields()
+    {
         templatePrefab = (GameObject)EditorGUILayout.ObjectField("Template Prefab:", templatePrefab, typeof(GameObject), false);
         newSpriteSheet = (Texture2D)EditorGUILayout.ObjectField("New SpriteSheet:", newSpriteSheet, typeof(Texture2D), false);
         prefabName = EditorGUILayout.TextField("Prefab Name:", prefabName);
+    }
 
+    private void DisplayReplaceButton()
+    {
         if (GUILayout.Button("Replace Art & Save New Prefab"))
         {
             ReplaceArt();
@@ -30,21 +39,34 @@ public class ArtReplacerTool : EditorWindow
 
     private void ReplaceArt()
     {
-        if (templatePrefab == null || newSpriteSheet == null)
+        if (!HasValidInput())
         {
             Debug.LogError("Ensure both the Template Prefab and New SpriteSheet are set!");
             return;
         }
 
         GameObject newInstance = Instantiate(templatePrefab);
-
-        string spriteSheetPath = AssetDatabase.GetAssetPath(newSpriteSheet);
-        Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(spriteSheetPath).OfType<Sprite>().ToArray();
-
+        Sprite[] sprites = LoadSpritesFromSheet();
         ReplaceSpritesInChildren(newInstance.transform, sprites);
-        string prefabPath = "Assets/Prefabs/" + prefabName + ".prefab";
-        PrefabUtility.SaveAsPrefabAsset(newInstance, prefabPath);
+        SavePrefab(newInstance);
         DestroyImmediate(newInstance);
+    }
+
+    private bool HasValidInput()
+    {
+        return templatePrefab != null && newSpriteSheet != null;
+    }
+
+    private Sprite[] LoadSpritesFromSheet()
+    {
+        string spriteSheetPath = AssetDatabase.GetAssetPath(newSpriteSheet);
+        return AssetDatabase.LoadAllAssetsAtPath(spriteSheetPath).OfType<Sprite>().ToArray();
+    }
+
+    private void SavePrefab(GameObject instance)
+    {
+        string prefabPath = $"Assets/Prefabs/{prefabName}.prefab";
+        PrefabUtility.SaveAsPrefabAsset(instance, prefabPath);
     }
 
     private void ReplaceSpritesInChildren(Transform parent, Sprite[] sprites)

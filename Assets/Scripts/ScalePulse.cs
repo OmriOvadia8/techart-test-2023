@@ -3,24 +3,29 @@ using DG.Tweening;
 
 public class ScalePulse : MonoBehaviour
 {
-    [SerializeField] private Vector3 scaleUp = new Vector3(1.2f, 1.2f, 1.2f); 
-    [SerializeField] private Vector3 scaleDown; 
-    [SerializeField] private float duration = 0.5f; 
+    [SerializeField] private Vector3 scaleUp = new(1.2f, 1.2f, 1.2f);
+    [SerializeField] private float duration = 0.5f;
+
+    private Vector3 initialScale;
 
     private void Start()
     {
-        scaleDown = transform.localScale; 
-
-        PulseScale();
+        initialScale = transform.localScale;
+        StartPulsing();
     }
 
-    void PulseScale()
+    private void StartPulsing()
     {
-        transform.DOScale(scaleUp, duration)
-        .OnComplete(() =>
-        {
-            transform.DOScale(scaleDown, duration)
-            .OnComplete(PulseScale); 
-        });
+        ScaleUp().OnComplete(ScaleDown);
+    }
+
+    private Tweener ScaleUp()
+    {
+        return transform.DOScale(scaleUp, duration);
+    }
+
+    private void ScaleDown()
+    {
+        transform.DOScale(initialScale, duration).OnComplete(StartPulsing);
     }
 }
