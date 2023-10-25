@@ -14,18 +14,12 @@ public class ScalePulse : MonoBehaviour
         StartPulsing();
     }
 
-    private void StartPulsing()
-    {
-        ScaleUp().OnComplete(ScaleDown);
-    }
+    private void StartPulsing() => ScaleUp().OnComplete(ScaleDown);
 
     private Tweener ScaleUp()
     {
         return transform.DOScale(scaleUp, duration);
     }
 
-    private void ScaleDown()
-    {
-        transform.DOScale(initialScale, duration).OnComplete(StartPulsing);
-    }
+    private void ScaleDown() => transform.DOScale(initialScale, duration).OnComplete(StartPulsing);
 }

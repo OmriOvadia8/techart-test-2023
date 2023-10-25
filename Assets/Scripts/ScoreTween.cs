@@ -1,43 +1,35 @@
 using UnityEngine;
 using DG.Tweening;
-using System.Collections.Generic;
 using TMPro;
-using static ScoreMultiplier;
 
 public class ScoreTween : MonoBehaviour
 {
-    [System.Serializable]
-    public class ScoreItem
-    {
-        public bool isActivated = true; // Determine if some scores are shown
-        public GameObject item;
-    }
-
     [Header("Score Multiplier Settings")]
     [SerializeField] private ScoreMultiplier scoreMultiplier;
 
     [Header("Reward Amount Settings")]
     [SerializeField] private TMP_Text rewardAmountText;
-    [SerializeField] private int rewardAmount;
+    [SerializeField] private int rewardAmount; // assign real reward amount via config/data
 
     [Header("Score Item Animation Settings")]
     [SerializeField] private float stretchDuration;
     [SerializeField] private float startScaleX;
     [SerializeField] private float delayBeforeStart;
-    [SerializeField] private List<ScoreItem> scoreItems = new();
+    [SerializeField] private float rewardRiseDuration;
 
-    private void Start()
-    {
-        InitializeScoreItems();
-    }
+    [Header("Reward Text Animation Settings")]
+    [SerializeField] private float rewardTextScaleUpFactor = 1.2f;
+    [SerializeField] private float rewardTextAnimationDuration = 0.5f;
+
+    private void Start() => InitializeScoreItems();
 
     private void InitializeScoreItems()
     {
-        rewardAmountText.text = rewardAmount.ToString("N0");
+        rewardAmountText.text = rewardAmount.ToN0String();
 
-        foreach (ScoreItem item in scoreItems)
+        foreach (var item in scoreMultiplier.GetMultiplierItems())
         {
-            item.item.SetActive(false);
+            item.ScoreInfoItem.SetActive(false);
         }
     }
 
@@ -52,11 +44,11 @@ public class ScoreTween : MonoBehaviour
     {
         Sequence seq = DOTween.Sequence();
 
-        foreach (ScoreItem scoreItem in scoreItems)
+        foreach (var multiplierItem in scoreMultiplier.GetMultiplierItems())
         {
-            if (scoreItem.isActivated)
+            if (multiplierItem.IsActivated)
             {
-                seq.AppendCallback(() => StretchFromLeft(scoreItem));
+                seq.AppendCallback(() => StretchFromLeft(multiplierItem));
                 seq.AppendInterval(stretchDuration + delayBeforeStart);
             }
         }
@@ -64,11 +56,11 @@ public class ScoreTween : MonoBehaviour
         return seq;
     }
 
-    private void StretchFromLeft(ScoreItem scoreItem)
+    private void StretchFromLeft(ScoreMultiplier.ScoreMultiplierItem multiplierItem)
     {
-        scoreItem.item.SetActive(true);
+        multiplierItem.ScoreInfoItem.SetActive(true);
 
-        RectTransform rectTransform = scoreItem.item.GetComponent<RectTransform>();
+        RectTransform rectTransform = multiplierItem.ScoreInfoItem.GetComponent<RectTransform>();
         Vector3 originalScale = rectTransform.localScale;
 
         rectTransform.localScale = new Vector3(startScaleX, originalScale.y, originalScale.z);
@@ -89,9 +81,12 @@ public class ScoreTween : MonoBehaviour
     {
         int totalMultiplier = 1;
 
-        foreach (MultiplierItem item in scoreMultiplier.GetMultiplierItems())
+        foreach (var item in scoreMultiplier.GetMultiplierItems())
         {
-            totalMultiplier *= item.multiplierValue;
+            if (item.IsActivated)
+            {
+                totalMultiplier *= item.MultiplierValue;
+            }
         }
 
         return totalMultiplier;
@@ -105,9 +100,9 @@ public class ScoreTween : MonoBehaviour
         }
         else
         {
-            DOVirtual.Float(initialReward, rewardAmount, 1f, value =>
+            DOVirtual.Float(initialReward, rewardAmount, rewardRiseDuration, value =>
             {
-                rewardAmountText.text = value.ToString("N0");
+                rewardAmountText.text = value.ToN0String();
             })
             .OnComplete(() => AnimateRewardTextScale(originalScale));
         }
@@ -115,7 +110,7 @@ public class ScoreTween : MonoBehaviour
 
     private void AnimateRewardTextScale(Vector3 originalScale)
     {
-        rewardAmountText.transform.DOScale(originalScale * 1.2f, 0.5f)
-        .OnComplete(() => rewardAmountText.transform.DOScale(originalScale, 0.5f));
+        rewardAmountText.transform.DOScale(originalScale * rewardTextScaleUpFactor, rewardTextAnimationDuration)
+        .OnComplete(() => rewardAmountText.transform.DOScale(originalScale, rewardTextAnimationDuration));
     }
 }

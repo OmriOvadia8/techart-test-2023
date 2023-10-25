@@ -5,25 +5,28 @@ using TMPro;
 public class ScoreMultiplier : MonoBehaviour
 {
     [System.Serializable]
-    public class MultiplierItem
+    public class ScoreMultiplierItem // all values should be assigned using a config/data in real game scenario
     {
-        public int multiplierValue;
-        public TMP_Text multiplierText;
-        public CanvasGroup canvasGroupAlpha;
+        // Score settings
+        public bool IsActivated = true;
+        public GameObject ScoreInfoItem;
+
+        // Multiplier settings
+        public int MultiplierValue;
+        public TMP_Text MultiplierText;
+        public CanvasGroup CanvasGroupAlpha;
     }
 
-    [SerializeField] private List<MultiplierItem> multiplierItems = new();
+    public List<ScoreMultiplierItem> ScoreMultiplierItems = new();
     [SerializeField] private int noneValue;
     [SerializeField] private float noneAlphaValue, noneTextSize, normalTextSize, normalAlphaValue;
+    [SerializeField] private string noneString;
 
-    private void Start()
-    {
-        RefreshMultiplierDisplays();
-    }
+    private void Start() => RefreshMultiplierDisplays();
 
     private void RefreshMultiplierDisplays()
     {
-        foreach (MultiplierItem item in multiplierItems)
+        foreach (ScoreMultiplierItem item in ScoreMultiplierItems)
         {
             if (IsMultiplierNone(item))
             {
@@ -36,27 +39,27 @@ public class ScoreMultiplier : MonoBehaviour
         }
     }
 
-    private bool IsMultiplierNone(MultiplierItem item)
+    private bool IsMultiplierNone(ScoreMultiplierItem item)
     {
-        return item.multiplierValue == noneValue;
+        return item.MultiplierValue == noneValue;
     }
 
-    private void SetMultiplierAsNone(MultiplierItem item)
+    private void SetMultiplierAsNone(ScoreMultiplierItem item)
     {
-        item.multiplierText.text = "NONE";
-        item.multiplierText.fontSize = noneTextSize;
-        item.canvasGroupAlpha.alpha = noneAlphaValue;
+        item.MultiplierText.text = noneString;
+        item.MultiplierText.fontSize = noneTextSize;
+        item.CanvasGroupAlpha.alpha = noneAlphaValue;
     }
 
-    private void SetMultiplierDisplay(MultiplierItem item)
+    private void SetMultiplierDisplay(ScoreMultiplierItem item)
     {
-        item.multiplierText.text = "X" + item.multiplierValue.ToString();
-        item.multiplierText.fontSize = normalTextSize;
-        item.canvasGroupAlpha.alpha = normalAlphaValue;
+        item.MultiplierText.text = item.MultiplierValue.ToMultiplierString();
+        item.MultiplierText.fontSize = normalTextSize;
+        item.CanvasGroupAlpha.alpha = normalAlphaValue;
     }
 
-    public List<MultiplierItem> GetMultiplierItems()
+    public List<ScoreMultiplierItem> GetMultiplierItems()
     {
-        return multiplierItems;
+        return ScoreMultiplierItems;
     }
 }

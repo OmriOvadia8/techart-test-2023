@@ -8,24 +8,12 @@ namespace Communix.Techart.Test
         [SerializeField]
         private Animator animator;
 
-        private void Reset()
-        {
-            animator = GetComponent<Animator>();
-        }
+        private void Reset() => animator = GetComponent<Animator>();
 
-        private void Start()
-        {
-            animator.SetTrigger("Play");
-        }
-        
-        public void OnClosePressed()
-        {
-            animator.SetTrigger("Close");
-        }
+        private void Start() => animator.SetTrigger("Play");
 
-        public void OnClose()
-        {
-            gameObject.SetActive(false);
-        }
+        public void OnClosePressed() => animator.SetTrigger("Close");
+
+        public void OnClose() => gameObject.SetActive(false);
     }
 }
